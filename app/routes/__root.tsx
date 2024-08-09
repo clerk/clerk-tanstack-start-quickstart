@@ -1,5 +1,4 @@
 import {
-  Link,
   Outlet,
   ScrollRestoration,
   createRootRoute,
@@ -10,8 +9,12 @@ import * as React from 'react'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
 import { ClerkProvider } from '@clerk/tanstack-start'
+import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
+  links: () => [
+    { rel: 'stylesheet', href: appCss },
+  ],
   errorComponent: (props) => {
     return (
       <RootDocument>
@@ -23,9 +26,7 @@ export const Route = createRootRoute({
   component: () => {
     return (
       <RootDocument>
-        <ClerkProvider>
-            <Outlet />
-        </ClerkProvider>
+        <Outlet />
       </RootDocument>
     )
   },
@@ -33,16 +34,18 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <Html>
-      <Head>
-        <Meta />
-      </Head>
-      <Body>
-        {children}
-        <ScrollRestoration />
-        <TanStackRouterDevtools position="bottom-right" />
-        <Scripts />
-      </Body>
-    </Html>
+    <ClerkProvider>
+      <Html>
+        <Head>
+          <Meta />
+        </Head>
+        <Body>
+          {children}
+          <ScrollRestoration />
+          <TanStackRouterDevtools position="bottom-right" />
+          <Scripts />
+        </Body>
+      </Html>
+    </ClerkProvider>
   )
 }
