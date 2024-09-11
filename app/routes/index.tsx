@@ -1,3 +1,11 @@
+import {
+  SignedIn,
+  UserButton,
+  SignOutButton,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+} from '@clerk/tanstack-start'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -6,6 +14,22 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <h1>Home Page</h1>
+    <div>
+      <h1>Index Route</h1>
+      <SignedIn>
+        <p>You are signed in</p>
+
+        <UserButton />
+
+        <SignOutButton />
+      </SignedIn>
+      <SignedOut>
+        <p>You are signed out</p>
+
+        <SignInButton />
+
+        <SignUpButton />
+      </SignedOut>
+    </div>
   )
 }

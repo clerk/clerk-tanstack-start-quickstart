@@ -1,32 +1,9 @@
-import {
-  Outlet,
-  ScrollRestoration,
-  createRootRoute,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { Outlet, ScrollRestoration, createRootRoute } from '@tanstack/react-router'
 import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'
 import * as React from 'react'
-import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
-import { NotFound } from '~/components/NotFound'
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from '@clerk/tanstack-start'
-import appCss from '~/styles/app.css?url'
+import { ClerkProvider } from '@clerk/tanstack-start'
 
 export const Route = createRootRoute({
-  links: () => [{ rel: 'stylesheet', href: appCss }],
-  errorComponent: (props) => {
-    return (
-      <RootDocument>
-        <DefaultCatchBoundary {...props} />
-      </RootDocument>
-    )
-  },
-  notFoundComponent: () => <NotFound />,
   component: () => {
     return (
       <RootDocument>
@@ -44,18 +21,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <Meta />
         </Head>
         <Body>
-          <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-
           {children}
           <ScrollRestoration />
-          <TanStackRouterDevtools position="bottom-right" />
           <Scripts />
         </Body>
       </Html>

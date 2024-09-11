@@ -11,32 +11,33 @@
     "format": "prettier --write '**/*' --ignore-unknown"
   },
   "dependencies": {
-    "@clerk/tanstack-start": "^0.3.4",
-    "@tanstack/react-router": "^1.52.5",
-    "@tanstack/router-devtools": "^1.52.5",
-    "@tanstack/router-plugin": "^1.52.0",
-    "@tanstack/start": "^1.52.5",
-    "@typescript-eslint/parser": "^8.4.0",
+    "@clerk/tanstack-start": "^0.4.0",
+    "@tanstack/react-router": "^1.57.9",
+    "@tanstack/router-devtools": "^1.57.9",
+    "@tanstack/router-plugin": "^1.57.9",
+    "@tanstack/start": "^1.57.9",
+    "@typescript-eslint/parser": "^8.5.0",
     "@vitejs/plugin-react": "^4.3.1",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2",
-    "vinxi": "0.4.1"
+    "vinxi": "0.4.2"
   },
   "devDependencies": {
-    "@types/node": "^20.16.3",
+    "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "eslint-config-react-app": "^7.0.1",
-    "postcss": "^8.4.44",
+    "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.4",
     "vite-tsconfig-paths": "^5.0.1"
-  }
+  },
+  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
 }
