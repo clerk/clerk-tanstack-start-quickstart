@@ -1,6 +1,6 @@
 import { Outlet, ScrollRestoration, createRootRoute } from '@tanstack/react-router'
 import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'
-import * as React from 'react'
+import type * as React from 'react'
 import { ClerkProvider } from '@clerk/tanstack-start'
 
 export const Route = createRootRoute({
