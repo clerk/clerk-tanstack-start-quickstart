@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration, createRootRoute } from '@tanstack/react-router'
-import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'
+import { Meta, Scripts } from '@tanstack/start'
 import type * as React from 'react'
 import { ClerkProvider } from '@clerk/tanstack-start'
 
@@ -16,16 +16,16 @@ export const Route = createRootRoute({
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
-      <Html>
-        <Head>
+      <html>
+        <head>
           <Meta />
-        </Head>
-        <Body>
+        </head>
+        <body>
           {children}
           <ScrollRestoration />
           <Scripts />
-        </Body>
-      </Html>
+        </body>
+      </html>
     </ClerkProvider>
   )
 }
