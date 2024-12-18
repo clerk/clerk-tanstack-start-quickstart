@@ -26,9 +26,9 @@ function Home() {
       <SignedOut>
         <p>You are signed out</p>
 
-        <SignInButton />
+        <SignInButton mode="modal" />
 
-        <SignUpButton />
+        <SignUpButton mode="modal" />
       </SignedOut>
     </div>
   )
