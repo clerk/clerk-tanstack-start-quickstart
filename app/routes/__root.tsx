@@ -1,5 +1,9 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { Meta, Scripts } from '@tanstack/start'
+import {
+  HeadContent,
+  Outlet,
+  createRootRoute,
+  Scripts,
+} from '@tanstack/react-router'
 import type * as React from 'react'
 import { ClerkProvider } from '@clerk/tanstack-start'
 
@@ -18,7 +22,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <ClerkProvider>
       <html>
         <head>
-          <Meta />
+          <HeadContent />
         </head>
         <body>
           {children}
